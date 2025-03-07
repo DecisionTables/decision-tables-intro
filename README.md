@@ -110,7 +110,7 @@ Example (Unicode):
 
 ![rules-as-rows-dtb](./assets/rules-as-rows-dtb.png)
 
-## Does it somehow work?
+## Does it work? Yes!
 
 ```shell
 $ cargo install dsntk
