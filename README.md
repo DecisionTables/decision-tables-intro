@@ -1,4 +1,4 @@
-# Introduction to `DECISION TABLES`
+# Introduction to DECISION TABLES
 
 ## What the decision table is?
 
@@ -21,7 +21,7 @@ _Pollack, S.L., Hicks, H.T.Jr., Harrison, W.J.: "Decision Tables: Theory and Pra
 > They are algorithms whose output is a set of actions. The information expressed in decision tables could also be represented
 > as decision trees or in a programming language as a series of if-then-else and switch-case statements.
 
-### DMN (2015-2024)
+### DMN (2015-present)
 
 [Decision Model and Notation specification v1.5](https://www.omg.org/spec/DMN)
 
@@ -69,16 +69,12 @@ _Pollack, S.L., Hicks, H.T.Jr., Harrison, W.J.: "Decision Tables: Theory and Pra
 >   Unit tests can be written to verify the output of a decision table based on different input values,
 >   without needing complex setup or mocking.
 
-## The history of decision tables
-
-(tbd)
-
 ## Examples
 
 ### Truth table
 
-[Truth table](https://en.wikipedia.org/wiki/Truth_table) can be percieved as the ancestor of decision table, like 
-logical AND shown below:
+The [truth table](https://en.wikipedia.org/wiki/Truth_table) can be perceived as an ancestor of decision table,
+like logical AND shown below:
 
 ![logical-and](./assets/logical-and.png)
 
