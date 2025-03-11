@@ -55,15 +55,15 @@ _Pollack, S.L., Hicks, H.T.Jr., Harrison, W.J.: "Decision Tables: Theory and Pra
 > - **Determinism**: Decision table always produces the same output for a given set of inputs, regardless of the external
 >   conditions or the state of the program. In other words, the output of decision table is solely determined by its
 >   input parameters, and it does not rely on any external state or side effects.
-> - **No Side Effects**: Decision table does not modify any state outside its scope, such as global variables,
+> - **No side effects**: Decision table does not modify any state outside its scope, such as global variables,
 >   mutable data structures, or input/output streams. It does not perform any actions that could have observable
 >   effects beyond returning its output value.
 >
 > Decision tables are highly desirable in functional programming paradigms because they offer several advantages:
-> - **Referential Transparency**: Since decision tables always produce the same output for the same input,
+> - **Referential transparency**: Since decision tables always produce the same output for the same input,
 >   they can be replaced with their return values without changing the behavior of the program.
 >   This property simplifies reasoning about code and facilitates optimization.
-> - **Concurrency and Parallelism**: Decision tables are inherently thread-safe because they do not rely on shared mutable state.
+> - **Concurrency and parallelism**: Decision tables are inherently thread-safe because they do not rely on shared mutable state.
 >   This makes it easier to write concurrent and parallel programs without worrying about race conditions or synchronization issues.
 > - **Testability**: Decision tables are easy to test, because their behavior is predictable and isolated.
 >   Unit tests can be written to verify the output of a decision table based on different input values,
