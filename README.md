@@ -90,7 +90,7 @@ Example in Unicode:
 
 ### Decision tables standarized in DMN (2015-present)
 
-#### Rules as columns
+> ### Rules as columns
 
 ![rules-as-columns](./assets/rules-as-columns.png)
 
@@ -128,7 +128,7 @@ Example in Markdown:
 | Description |                       | `Ann` |   Desc 1   |   Desc 2   |  Desc 3   |
 | Reference   |                       | `Ann` |   Ref 4    |   Ref 4    |   Ref 5   |
 
-#### Rules as rows
+> ### Rules as rows
 
 ![rules-as-rows](./assets/rules-as-rows.png)
 
