@@ -1,3 +1,5 @@
+[DecisionToolkit]: https://crates.io/crates/dsntk
+
 # Introduction to decision tables
 
 ## What is a decision table?
@@ -137,45 +139,58 @@ Example in Unicode:
 ```text
 ┌───────────────┐
 │   Discount    │
-├───┬───────────┴───────────┬────────────╥────────────────╥─────────────┬───────────┐
-│ U │       Customer        │ Order size ║    Discount    ║ Description │ Reference │
-│   ├───────────────────────┼────────────╫────────────────╫─────────────┼───────────┤
-│   │ "Business", "Private" │ <10, >=10  ║ 0.10,0.15,0.05 ║             │           │
-╞═══╪═══════════════════════╪════════════╬════════════════╬═════════════╪═══════════╡
-│ 1 │      "Business"       │    < 10    ║      0.10      ║    Desc 1   │   Ref 4   │
-├───┼───────────────────────┼────────────╫────────────────╫─────────────┼───────────┤
-│ 2 │      "Business"       │   >= 10    ║      0.15      ║    Desc 1   │   Ref 4   │
-├───┼───────────────────────┼────────────╫────────────────╫─────────────┼───────────┤
-│ 3 │      "Private"        │     -      ║      0.05      ║    Desc 1   │   Ref 5   │
-└───┴───────────────────────┴────────────╨────────────────╨─────────────┴───────────┘
+├───┬───────────┴───────────┬────────────╥──────────────────╥─────────────┬───────────┐
+│ U │       Customer        │ Order size ║    Discount      ║ Description │ Reference │
+│   ├───────────────────────┼────────────╫──────────────────╫─────────────┼───────────┤
+│   │ "Business", "Private" │ <10, >=10  ║ 0.10, 0.15, 0.05 ║             │           │
+╞═══╪═══════════════════════╪════════════╬══════════════════╬═════════════╪═══════════╡
+│ 1 │      "Business"       │     <10    ║       0.10       ║    Desc 1   │   Ref 4   │
+├───┼───────────────────────┼────────────╫──────────────────╫─────────────┼───────────┤
+│ 2 │      "Business"       │    >=10    ║       0.15       ║    Desc 1   │   Ref 4   │
+├───┼───────────────────────┼────────────╫──────────────────╫─────────────┼───────────┤
+│ 3 │      "Private"        │     -      ║       0.05       ║    Desc 1   │   Ref 5   │
+└───┴───────────────────────┴────────────╨──────────────────╨─────────────┴───────────┘
 ```
 
 Example in Markdown:
 
+> # Discount
 
+| U |       Customer        | Order size |     Discount     | Description | Reference |
+|:--|:---------------------:|:----------:|:----------------:|:-----------:|:---------:|
+|   | "Business", "Private" | <10, >=10  | 0.10, 0.15, 0.05 |             |           |
+|   |         `In`          |    `In`    |      `Out`       |    `Ann`    |   `Ann`   |
+| 1 |      "Business"       |    <10     |       0.10       |   Desc 1    |   Ref 4   |
+| 2 |      "Business"       |    >=10    |       0.15       |   Desc 2    |   Ref 4   |
+| 3 |       "Private"       |     -      |       0.05       |   Desc 3    |   Ref 5   |
 
 ## Does it work? Yes!
+
+First, clone this repository and install [DecisionToolkit]: 
 
 ```shell
 $ cargo install dsntk
 ```
 
+Change the current directory to `assets` and run: 
+
 ```shell
+$ cd assets
 $ dsntk edt input.ctx rules-as-rows.uni 
 $ dsntk edt input.ctx rules-as-columns.uni
 ```
 
 ## Exercise
 
-### Question
+### Question:
 
-How to convert this truth table
+> How to convert this truth table into decision table?
 
 ![truth-table](./assets/logical-and.png)
 
-into decision table?
+### Answer:
 
-### Answer
+> Add the hit policy and rule numbers before the first column.
 
 ![decision-table](./exercise/table.png)
 
