@@ -1,6 +1,6 @@
 # Introduction to decision tables
 
-## What the decision table is?
+## What is a decision table?
 
 ### From "Decision Tables: Theory and Practice" (1971)
 
