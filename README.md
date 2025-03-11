@@ -98,7 +98,7 @@ Structure:
 
 Example (Unicode):
 
-![rules-as-columns-dtb](./assets/rules-as-columns-dtb.png)
+![rules-as-columns](./assets/rules-as-columns-uni.png)
 
 #### Rules as rows
 
@@ -108,7 +108,7 @@ Structure:
 
 Example (Unicode):
 
-![rules-as-rows-dtb](./assets/rules-as-rows-dtb.png)
+![rules-as-rows](./assets/rules-as-rows-uni.png)
 
 ## Does it work? Yes!
 
@@ -117,8 +117,8 @@ $ cargo install dsntk
 ```
 
 ```shell
-$ dsntk edt input.ctx rules-as-rows.dtb 
-$ dsntk edt input.ctx rules-as-columns.dtb
+$ dsntk edt input.ctx rules-as-rows.uni 
+$ dsntk edt input.ctx rules-as-columns.uni
 ```
 
 ## Exercise
@@ -137,7 +137,7 @@ into decision table?
 
 ```shell
 $ cd exercise
-$ ./run
+$ dsntk edt input.ctx table.uni
 true
 ```
 
