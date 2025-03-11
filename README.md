@@ -80,11 +80,9 @@ like logical AND shown below:
 
 ### Early decision tables (1957-2015)
 
-Structure:
-
 ![early-decision-table-structure](./assets/early-decision-table-structure.png)
 
-Example (Unicode):
+Example in Unicode:
 
 ![early-decision-table](./assets/early-decision-table.png)
 
@@ -92,23 +90,69 @@ Example (Unicode):
 
 #### Rules as columns
 
-Structure:
-
 ![rules-as-columns](./assets/rules-as-columns.png)
 
-Example (Unicode):
+Example in Unicode:
 
 ![rules-as-columns](./assets/rules-as-columns-uni.png)
 
-#### Rules as rows
+```text
+┌──────────┐
+│ Discount │
+├──────────┴───┬───────────────────────╥─────────────────┬───────────┐
+│ Customer     │ "Business", "Private" ║    "Business"   │ "Private" │
+├──────────────┼───────────────────────╫────────┬────────┼───────────┤
+│ Order size   │       <10, >=10       ║   <10  │  >=10  │     -     │
+╞══════════════╪═══════════════════════╬════════╪════════╪═══════════╡
+│ Discount     │   0.10, 0.15, 0.05    ║  0.10  │  0.15  │   0.05    │
+╞══════════════╪═══════════════════════╬════════╪════════╪═══════════╡
+│ Description  │                       ║ Desc 1 │ Desc 2 │   Desc 3  │
+├──────────────┼───────────────────────╫────────┼────────┼───────────┤
+│ Reference    │                       ║ Ref 4  │ Ref 4  │   Ref 5   │
+├──────────────┼───────────────────────╫────────┼────────┼───────────┤
+│      U       │                       ║   1    │   2    │     3     │
+└──────────────┴───────────────────────╨────────┴────────┴───────────┘
+```
 
-Structure:
+Example in Markdown:
+
+> # Discount
+
+| U           |                       |       |     1      |     2      |     3     |
+|:------------|:---------------------:|:-----:|:----------:|:----------:|:---------:|
+| Customer    | "Business", "Private" | `In`  | "Business" | "Business" | "Private" |
+| Order size  |       <10, >=10       | `In`  |    <10     |    >=10    |     -     |
+| Discount    |   0.10, 0.15, 0.05    | `Out` |    0.10    |    0.15    |   0.05    |
+| Description |                       | `Ann` |   Desc 1   |   Desc 2   |  Desc 3   |
+| Reference   |                       | `Ann` |   Ref 4    |   Ref 4    |   Ref 5   |
+
+#### Rules as rows
 
 ![rules-as-rows](./assets/rules-as-rows.png)
 
-Example (Unicode):
+Example in Unicode:
 
 ![rules-as-rows](./assets/rules-as-rows-uni.png)
+
+```text
+┌───────────────┐
+│   Discount    │
+├───┬───────────┴───────────┬────────────╥────────────────╥─────────────┬───────────┐
+│ U │       Customer        │ Order size ║    Discount    ║ Description │ Reference │
+│   ├───────────────────────┼────────────╫────────────────╫─────────────┼───────────┤
+│   │ "Business", "Private" │ <10, >=10  ║ 0.10,0.15,0.05 ║             │           │
+╞═══╪═══════════════════════╪════════════╬════════════════╬═════════════╪═══════════╡
+│ 1 │      "Business"       │    < 10    ║      0.10      ║    Desc 1   │   Ref 4   │
+├───┼───────────────────────┼────────────╫────────────────╫─────────────┼───────────┤
+│ 2 │      "Business"       │   >= 10    ║      0.15      ║    Desc 1   │   Ref 4   │
+├───┼───────────────────────┼────────────╫────────────────╫─────────────┼───────────┤
+│ 3 │      "Private"        │     -      ║      0.05      ║    Desc 1   │   Ref 5   │
+└───┴───────────────────────┴────────────╨────────────────╨─────────────┴───────────┘
+```
+
+Example in Markdown:
+
+
 
 ## Does it work? Yes!
 
