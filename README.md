@@ -118,7 +118,7 @@ Example in Unicode:
 
 Example in Markdown:
 
-> # Discount
+> #### Discount
 
 | U           |                       |       |     1      |     2      |     3     |
 |:------------|:---------------------:|:-----:|:----------:|:----------:|:---------:|
@@ -154,7 +154,7 @@ Example in Unicode:
 
 Example in Markdown:
 
-> # Discount
+> #### Discount
 
 | U |       Customer        | Order size |     Discount     | Description | Reference |
 |:--|:---------------------:|:----------:|:----------------:|:-----------:|:---------:|
