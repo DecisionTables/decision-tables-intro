@@ -138,6 +138,11 @@ into decision table?
 ```shell
 $ cd exercise
 $ dsntk edt input.ctx table.uni
+```
+
+Output:
+
+```js
 true
 ```
 
